@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
+import SearchBar from './components/searchBar'
+import VideoPlay from './components/videoPlay'
+import VideoContainer from './components/videoPlay';
+import VideoList from './components/video_list';
+
+class App extends Component {
+  render() {
+    return(
+      <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+       <div className="menu">
+         <ui className="nav">
+           <li><a href="/">Home</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/Favourite Videos/">Facourite Videos</a></li>
+            <li><a href="/KidsOnly/">Kids Only</a></li>
+         </ui>
+       </div>
+       </header>
+
+       <section className="searchBar">
+         <SearchBar />
+       </section >
+        <section className="main">
+         <VideoPlay />
+         <VideoList/>
+        </section>   
+        </div>
+    )
+  }
 }
 
 export default App;
